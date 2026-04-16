@@ -1,8 +1,14 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerCardController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public AudioSource pickCardAS;
+    public AudioSource dropCardAS;
+
+    public GameObject combatController;
+
     void Start()
     {
         
@@ -17,8 +23,14 @@ public class PlayerCardController : MonoBehaviour
     private void OnMouseDown()
     {
 
-        print("Click");
         GetComponent<SpriteRenderer>().sortingLayerName = "Selected Cards";
+        GetComponent<BoxCollider2D>().enabled = false;
+        if (!pickCardAS.isPlaying)
+        {
+            pickCardAS.pitch = Random.Range(0.95f, 1.05f);
+            pickCardAS.Play();
+        }
+       
 
     }
     private void OnMouseDrag()
@@ -31,8 +43,26 @@ public class PlayerCardController : MonoBehaviour
     }
     private void OnMouseUp()
     {
-
+        GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+
+        if (!dropCardAS.isPlaying)
+        {
+            dropCardAS.pitch = Random.Range(0.95f, 1.05f);
+            dropCardAS.Play();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (!collision.gameObject.GetComponent<OppCardController>().inCombat)
+        {
+           GameObject cs = Instantiate(combatController, transform.position, Quaternion.identity);
+            cs.GetComponent<CombatController>().playerCard = GetComponent<CardStatController>();
+            cs.GetComponent<CombatController>().oppCard = GetComponent<CardStatController>();
+        }
 
     }
 }
+

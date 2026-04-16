@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 947298350681577583, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
       propertyPath: m_Name
-      value: free_pixel_art_card_pack_2 Variant
+      value: OppCard
       objectReference: {fileID: 0}
     - target: {fileID: 5004940860834629742, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 5.47
       objectReference: {fileID: 0}
     - target: {fileID: 5004940860834629742, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 5004940860834629742, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6080716608103151778, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
+      propertyPath: attack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387662807748825817, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7051337479071667440, guid: c4e15fa894ff05b43b4b4c6f70b2d19c, type: 3}
     m_RemovedComponents:
     - {fileID: 8987120282936912927, guid: 09e45ea289455c442806f790fc6fe3b4, type: 3}
     m_RemovedGameObjects: []
@@ -78,3 +86,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808677e7428aeee49ae6d90e96230860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OppCardController
+  inCombat: 0

@@ -9,15 +9,9 @@ public class CardStatController : MonoBehaviour
     //Range es un atributo para añadir un rango máximo de valores que se puedan establecer desde el editor
     [SerializeField, Tooltip("Attack of the card"), Range(0, 9)]
     private int attack;
-    
-    void Start()
-    {
-        
-    }
 
-    
-    void Update()
+    public int GetAttack()
     {
-        
+        return attack;
     }
 }
